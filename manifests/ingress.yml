@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "k8sdemo-def1"
+    labels:
+        app: "k8sdemo-def1"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: k8s-demob35a-k8sdemo-def1.c0eab95626654f62be00.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "k8sdemo-def1"
+                servicePort: 80
